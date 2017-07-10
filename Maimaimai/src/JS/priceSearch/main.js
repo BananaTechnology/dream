@@ -40,9 +40,8 @@ $(function () {
                             }).on("touchstart", e => {
                                 let {target} = e;
                                 if ($(target).attr("categoryId")) {
-                                    // productList($(target).attr("categoryId"));
-
                                     localStorage.setItem("categoryId", $(target).attr("categoryId"));
+                                    localStorage.setItem("sort",$(target).text());
 
                                     window.location = "/dream/Maimaimai/src/search-List.html";
                                 }

@@ -142,7 +142,9 @@ header {
   height: 38px;
   padding-left: 10px;
   line-height: 38px;
-  background: #ebebeb linear-gradient(#ffffff, #ebebeb); }
+  background: #ebebeb linear-gradient(#ffffff, #ebebeb);
+  font-size: 16px;
+  color: #a1a1a1; }
 .productDetailed .productInfo {
   padding: 10px 10px 0; }
   .productDetailed .productInfo .productPic {

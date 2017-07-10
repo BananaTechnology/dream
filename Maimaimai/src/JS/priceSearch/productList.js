@@ -18,6 +18,7 @@ $(function () {
 
             $(".productListBox").on("touchstart", ".productItem", function () {
                 localStorage.setItem("productid", $(this).attr("productid"));
+                localStorage.setItem("item",$(this).attr("brandName"));
             });
 
             $(".productSwitch button").on("touchstart", function () {

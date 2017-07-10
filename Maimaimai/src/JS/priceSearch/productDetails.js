@@ -4,6 +4,8 @@
 
 $(function () {
     let id = localStorage.getItem("productid");
+    let sort = localStorage.getItem("sort");
+    let item = localStorage.getItem("item");
 
     $.ajax({
         url: "http://192.168.17.28:9090/api/getproduct",
@@ -18,6 +20,8 @@ $(function () {
                 data: {productid: id},
                 success(res){
                     data.comment = res.result;
+                    data.sort = sort;
+                    data.item = item;
 
                     let productDetailsTpl = $("#priceSearchDetails").html();
 

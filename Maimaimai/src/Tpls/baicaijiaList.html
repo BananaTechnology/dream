@@ -1,0 +1,37 @@
+<!--白菜价头部-->
+<div class="bcj-top" id='toTop'>
+    <div class="bcj-back">
+        <a class='icon-angle-left icon-3x'></a>
+    </div>
+    <div class="bcj-theme">
+        <h1>白菜价-淘宝内部券</h1>
+    </div>
+    <div class="bcj-download">
+        <a>
+        </a>
+    </div>
+</div>
+<!--白菜价菜单栏-->
+<div class="bcj-tabItem">
+    <div class='swiper-wrapper'>
+        <!-- 白菜价标题-->
+        <ul class="nav swiper-slide clearfix">
+            {{each}}
+            <li class="fl"><a class='bcj-item' titleId='{{@$value.titleId}}'>{{@$value.title}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <!--隐藏的搜索框-->
+    <div class="searchHide">
+        <div class="txt">
+            <input type="" name="" value="" placeholder="搜索商品即可查内部券">
+            <div class='btn'>搜索</div>
+        </div>
+    </div>
+    <!--右边搜索框-->
+    <div class='bcj-search'>
+        <i class="icon-align-left icon-2x">
+        </i>
+    </div>
+
+</div>

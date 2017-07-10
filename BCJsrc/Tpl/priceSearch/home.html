@@ -1,0 +1,21 @@
+<div class="priceSearchWrap">
+    <!--商品列表盒子-->
+    <div class="productBox">
+        <!--商品标题列表-->
+        <ul class="productTitleList">
+            {{each}}
+            <li class="productTitle" titleId="{{$value.titleId}}">
+                <h3>{{$value.title}}</h3>
+                <span class="pullDown"></span>
+                <div class="productChildBox">
+                    <ul class="productChildList">
+                        {{each $value.childProduct}}
+                        <li class="itemProduct" categoryId="{{$value.categoryId}}">{{$value.category}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

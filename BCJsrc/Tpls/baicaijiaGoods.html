@@ -1,0 +1,39 @@
+<!--白菜价具体商品区域-->
+<div class="bcj-contentBox">
+    <div class='bcj-goods'>
+
+        <div class="bcj-banner">
+            <img src="http://misc.manmanbuy.com/images/quanpic/quan_banner_wap.png" alt="">
+        </div>
+
+        <!--<div class="bcj-banner" style="display:none">
+            <img src="http://misc.manmanbuy.com/images/quanpic/quan_banner_wap.png" alt="">
+        </div>-->
+
+        <div class="bcj-goodsBox">
+            <ul class='bcj-goods'>
+                {{each}}
+                <li>
+                    <a href="http://shop.m.taobao.com/shop/coupon.htm?activityId=27a14c9fc6bb4a48b917d567fcf8f664&amp;sellerId=2246833798" target="_blank" class='gobuy'></a>
+                    <div class='pic'>
+                        {{@$value.productImg}}
+                    </div>
+                    <div class='info'>
+                        <div class="infoTop">
+                            <p class='bcj-info'>{{@$value.productName}}</p>
+                            <p class="price">{{@$value.productPrice}}</p>
+                        </div>
+                        <div class="infoBottom">
+                            <div class="ticketAll clearfix">
+                                <div class='ticket fl'>{{@$value.productCoupon}}</div>
+                                <div class="btn fr">{{@$value.productHref}}</div>
+                            </div>
+                            {{@$value.productCouponRemain}}
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

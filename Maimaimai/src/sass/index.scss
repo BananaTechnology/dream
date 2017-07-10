@@ -8,6 +8,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
     font-family: 'simson';
 }
 
@@ -75,7 +76,7 @@ body {
                 display: inline-block;
                 width: 50px;
                 height: 44px;
-                background: url('../IMG/header_app.png') no-repeat center center /23px 22px;
+                background: url('../IMG/header_app.png') no-repeat center center /34px 34px;
                 &:hover {
                     text-decoration: none;
                 }
@@ -91,16 +92,27 @@ body {
             width: 100%;
             height: 100%;
             border-bottom: 1px solid #eee;
-            overflow: hidden;
             position: relative;
-            .swiper-wrapper {
-                width: 100%;
+            display: flex;
+            overflow: hidden;
+            .bcj-swiperContent {
+                flex: 1;
                 ul {
                     width: auto;
                     height: 36px;
                     border: transparent;
                     >li {
                         height: 36px;
+                        &.active {
+                            border: none;
+                            border: none;
+                            color: #E4393C;
+                        }
+                        &.active a {
+                            color: #E4393C;
+                            border-bottom: 2px solid #E4393C;
+                            background-color: transparent;
+                        }
                         a {
                             color: #333;
                             font-size: 14px;
@@ -109,19 +121,12 @@ body {
                             padding: 0;
                             width: auto;
                             margin: 0 12px;
-                            &.active {
-                                border: none;
-                                border: none;
-                                border-bottom: 2px solid #E4393C;
-                                color: #E4393C;
-                                background-color: transparent;
-                            }
                         }
                     }
                 }
-                .swiper-slide {
-                    height: auto;
-                }
+            }
+            .swiper-slide {
+                height: auto;
             }
             /*切换按钮旁边的搜索按钮*/
             .bcj-search {
@@ -131,9 +136,6 @@ body {
                 background-color: #fbfbfb;
                 border-left: 1px solid #e6e6e6;
                 border-bottom: 1px solid #e6e6e6;
-                position: absolute;
-                right: 0;
-                top: 0;
                 z-index: 2;
                 i {
                     display: inline-block;
@@ -142,21 +144,63 @@ body {
                     height: 38px;
                     line-height: 38px;
                     color: #bbb;
+                    &:before {
+                        font-size: 16px;
+                    }
                 }
             }
-            .searchHide {
-                position: absolute;
-                width: 320px;
-                height: 55px;
-                // top: 44px;
-                left: 0;
-                background-color: #F7F7F7;
-                z-index: 999;
+        }
+        /*隐藏的收索框*/
+        .bcj-searchHide {
+            position: absolute;
+            width: 100%;
+            max-width: 725px;
+            height: 55px;
+            top: 81px;
+            left: 0;
+            background-color: #F7F7F7;
+            box-shadow: 0px 3px 5px 1px #ccc;
+            padding: 10px;
+            z-index: 99;
+            display: none;
+            .bcj-txt {
+                padding-right: 40px;
+                height: 35px;
+                font-size: 14px;
+                width: 100%;
+                height: 35px;
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    padding-left: 35px;
+                    font-weight: 400;
+                }
+                i {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 16px;
+                    color: #ccc;
+                }
+                .bcj-btn {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    font-size: 16px;
+                    outline: none;
+                }
+                .show {
+                    display: block;
+                }
             }
         }
     }
     /*白菜区域具体商品*/
     .bcj-container {
+        max-width: 962px;
+        margin: 0 auto;
         .bcj-contentBox {
             .bcj-goods {
                 /*白菜价全部区域广告图片*/
@@ -165,11 +209,14 @@ body {
                     margin-bottom: 5px;
                     width: 100%;
                     min-height: 58px;
-                    // display: none;
+                    display: none;
                     img {
                         display: block;
                         width: 100%;
                         height: 100%;
+                    }
+                    &.active {
+                        display: block;
                     }
                 }
                 /*商品区域*/
@@ -279,13 +326,13 @@ body {
     /*底部的返回箭头*/
     footer {
         .bcj-toTop {
+            display: none;
             >a {
                 position: fixed;
                 bottom: 30px;
                 right: 10px;
                 color: #808080;
                 z-index: 999;
-                display: none;
                 &:hover {
                     text-decoration: none;
                 }

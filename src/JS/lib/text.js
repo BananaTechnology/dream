@@ -1,23 +1,15 @@
 /**
-<<<<<<< HEAD
  *
  * Created by WilbertCheng on 2017/4/26.
  */
 /**
-=======
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
  * @license text 2.0.15 Copyright jQuery Foundation and other contributors.
  * Released under MIT license, http://github.com/requirejs/text/LICENSE
  */
 /*jslint regexp: true */
 /*global require, XMLHttpRequest, ActiveXObject,
-<<<<<<< HEAD
  define, window, process, Packages,
  java, location, Components, FileUtils */
-=======
-  define, window, process, Packages,
-  java, location, Components, FileUtils */
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
 
 define(['module'], function (module) {
     'use strict';
@@ -116,11 +108,7 @@ define(['module'], function (module) {
                 strip = false,
                 index = name.lastIndexOf("."),
                 isRelative = name.indexOf('./') === 0 ||
-<<<<<<< HEAD
                     name.indexOf('../') === 0;
-=======
-                             name.indexOf('../') === 0;
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
 
             if (index !== -1 && (!isRelative || index > 1)) {
                 modName = name.substring(0, index);
@@ -173,13 +161,8 @@ define(['module'], function (module) {
             uHostName = uHostName[0];
 
             return (!uProtocol || uProtocol === protocol) &&
-<<<<<<< HEAD
                 (!uHostName || uHostName.toLowerCase() === hostname.toLowerCase()) &&
                 ((!uPort && !uHostName) || isSamePort(uProtocol, uPort, protocol, port));
-=======
-                   (!uHostName || uHostName.toLowerCase() === hostname.toLowerCase()) &&
-                   ((!uPort && !uHostName) || isSamePort(uProtocol, uPort, protocol, port));
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
         },
 
         finishLoad: function (name, strip, content, onLoad) {
@@ -212,11 +195,7 @@ define(['module'], function (module) {
                     (parsed.ext ? '.' + parsed.ext : ''),
                 url = req.toUrl(nonStripName),
                 useXhr = (masterConfig.useXhr) ||
-<<<<<<< HEAD
                     text.useXhr;
-=======
-                         text.useXhr;
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
 
             // Do not load if it is an empty: url
             if (url.indexOf('empty:') === 0) {
@@ -240,11 +219,7 @@ define(['module'], function (module) {
                 //!strip part to avoid file system issues.
                 req([nonStripName], function (content) {
                     text.finishLoad(parsed.moduleName + '.' + parsed.ext,
-<<<<<<< HEAD
                         parsed.strip, content, onLoad);
-=======
-                                    parsed.strip, content, onLoad);
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
                 });
             }
         },
@@ -253,15 +228,9 @@ define(['module'], function (module) {
             if (buildMap.hasOwnProperty(moduleName)) {
                 var content = text.jsEscape(buildMap[moduleName]);
                 write.asModule(pluginName + "!" + moduleName,
-<<<<<<< HEAD
                     "define(function () { return '" +
                     content +
                     "';});\n");
-=======
-                               "define(function () { return '" +
-                                   content +
-                               "';});\n");
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
             }
         },
 
@@ -269,13 +238,8 @@ define(['module'], function (module) {
             var parsed = text.parseName(moduleName),
                 extPart = parsed.ext ? '.' + parsed.ext : '',
                 nonStripName = parsed.moduleName + extPart,
-<<<<<<< HEAD
             //Use a '.js' file name so that it indicates it is a
             //script that can be loaded across domains.
-=======
-                //Use a '.js' file name so that it indicates it is a
-                //script that can be loaded across domains.
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
                 fileName = req.toUrl(parsed.moduleName + extPart) + '.js';
 
             //Leverage own load() method to load plugin value, but only
@@ -298,19 +262,11 @@ define(['module'], function (module) {
     };
 
     if (masterConfig.env === 'node' || (!masterConfig.env &&
-<<<<<<< HEAD
         typeof process !== "undefined" &&
         process.versions &&
         !!process.versions.node &&
         !process.versions['node-webkit'] &&
         !process.versions['atom-shell'])) {
-=======
-            typeof process !== "undefined" &&
-            process.versions &&
-            !!process.versions.node &&
-            !process.versions['node-webkit'] &&
-            !process.versions['atom-shell'])) {
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
         //Using special require.nodeRequire, something added by r.js.
         fs = require.nodeRequire('fs');
 
@@ -329,11 +285,7 @@ define(['module'], function (module) {
             }
         };
     } else if (masterConfig.env === 'xhr' || (!masterConfig.env &&
-<<<<<<< HEAD
         text.createXhr())) {
-=======
-            text.createXhr())) {
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
         text.get = function (url, callback, errback, headers) {
             var xhr = text.createXhr(), header;
             xhr.open('GET', url, true);
@@ -377,11 +329,7 @@ define(['module'], function (module) {
             xhr.send(null);
         };
     } else if (masterConfig.env === 'rhino' || (!masterConfig.env &&
-<<<<<<< HEAD
         typeof Packages !== 'undefined' && typeof java !== 'undefined')) {
-=======
-            typeof Packages !== 'undefined' && typeof java !== 'undefined')) {
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
         //Why Java, why is this so awkward?
         text.get = function (url, callback) {
             var stringBuffer, line,
@@ -422,13 +370,8 @@ define(['module'], function (module) {
             callback(content);
         };
     } else if (masterConfig.env === 'xpconnect' || (!masterConfig.env &&
-<<<<<<< HEAD
         typeof Components !== 'undefined' && Components.classes &&
         Components.interfaces)) {
-=======
-            typeof Components !== 'undefined' && Components.classes &&
-            Components.interfaces)) {
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
         //Avert your gaze!
         Cc = Components.classes;
         Ci = Components.interfaces;
@@ -448,7 +391,6 @@ define(['module'], function (module) {
             //XPCOM, you so crazy
             try {
                 inStream = Cc['@mozilla.org/network/file-input-stream;1']
-<<<<<<< HEAD
                     .createInstance(Ci.nsIFileInputStream);
                 inStream.init(fileObj, 1, 0, false);
 
@@ -456,15 +398,6 @@ define(['module'], function (module) {
                     .createInstance(Ci.nsIConverterInputStream);
                 convertStream.init(inStream, "utf-8", inStream.available(),
                     Ci.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
-=======
-                           .createInstance(Ci.nsIFileInputStream);
-                inStream.init(fileObj, 1, 0, false);
-
-                convertStream = Cc['@mozilla.org/intl/converter-input-stream;1']
-                                .createInstance(Ci.nsIConverterInputStream);
-                convertStream.init(inStream, "utf-8", inStream.available(),
-                Ci.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b
 
                 convertStream.readString(inStream.available(), readData);
                 convertStream.close();
@@ -476,8 +409,4 @@ define(['module'], function (module) {
         };
     }
     return text;
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 856d89cb1258639b931b56402782e46346ead87b

@@ -1,0 +1,334 @@
+//引入normail.css
+@import "../js/lib/normalize.less";
+
+//引入base。css
+@import "common/base.less";
+
+//定义HTML和body
+html,body{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+//head部分
+.head{
+  background: #f4483e;
+  color: white;
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 50px;
+  font-weight: 900;
+  position: relative;
+  text-align: center;
+  .back{
+    a{
+      display: inline-block;
+      width: 50px;
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  h1{
+
+  }
+  .home{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    img{
+      display: inline-block;
+      width: 40px;
+    }
+  }
+}
+
+.quan-box{
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px 30px 10px;
+  overflow: hidden;
+  .quan-body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    .quan-model{
+      width: 30%;
+      margin-top: 20px;
+      ul{
+        width: 100%;
+        li{
+
+          height: 75px;
+          border: 1px solid #eeeeee;
+          margin-left: 10px;
+          text-align: center;
+          a{
+            text-decoration: none;
+            color: #5a5a5a;
+            img{
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              margin-top: 5px;
+            }
+          }
+
+        }
+      }
+  }
+    .quan-list{
+      width: 100%;
+
+    }
+
+  }
+}
+
+//优惠券列表
+.couponproduct-box{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  //flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  //头部部分
+  .headProduct{
+    background: #f4483e;
+    color: white;
+    height: 50px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 50px;
+    font-weight: 900;
+    position: relative;
+    text-align: center;
+    .back1{
+      a{
+        display: inline-block;
+        width: 50px;
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    h1{
+      font-size: 16px;
+      line-height: 50px;
+    }
+    .home1{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      a{
+        img{
+          display: inline-block;
+          width: 40px;
+        }
+      }
+
+    }
+  }
+
+  //主要内容部分
+  .couponproduct-body{
+
+    width: 100%;
+    flex: 1;
+    overflow-y: scroll;
+    background-color: white;
+    //overflow: hidden;
+    .couponproduct-body-content{
+      h2{
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+        margin: 4px 0px;
+      }
+      .couponproduct-list{
+        width: 100%;
+        ul{
+          width: 100%;
+          li{
+            width: 100%;
+            height: auto;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E7E7E7;
+            padding-top: 10px;
+            a{
+              box-sizing: border-box;
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              padding-right: 20px;
+              .couponproduct-list-left{
+                width: 25%;
+                height: 100%;
+                text-align: center;
+                vertical-align:middle;
+                span.pic{
+                  width: 100%;
+                  height: 100%;
+                  display: inline-block;
+                  img{
+                    display: inline-block;
+                    width: 90px;
+
+
+                  }
+                }
+              }
+              .couponproduct-list-right{
+                width: 75%;
+                p.title{
+                  margin: 0px;
+                  padding: 0px;
+                  word-break: break-all;
+                  text-align: justify;
+                  font-size: 14px;
+                  font-weight: normal;
+                  color: black;
+                  line-height: 20px;
+                }
+                p.price{
+                  margin: 5px;
+                  padding: 0px;
+                  word-break: break-all;
+                  text-align: justify;
+                  font-size: 14px;
+                  font-weight: normal;
+                  color: black;
+                  line-height: 20px;
+                  font-weight: 600;
+                }
+                p.period{
+                  padding: 0px;
+                  word-break: break-all;
+                  text-align: justify;
+                  font-size: 14px;
+                  font-weight: normal;
+                  color: black;
+                  line-height: 20px;
+                  font-weight: 900;
+                  font-size: 12px;
+                  color: #EE7700;
+                  //margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+  //遮罩层部分
+  .masklayer{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index: 200;
+    display: none;
+    .slideshow{
+
+      .slideshow-body{
+        position: relative;
+        //遮罩层轮播图部分
+
+        //.swiper-container{
+        //  width: 100%;
+        //  height: 100%;
+        //  background-color: red;
+        //}
+
+      }
+
+    }
+  }
+
+
+}
+
+.couponproduct{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+//.swiper-container{
+//  //width: 410px;
+//  //height: 220px;
+//  width: 400px;
+//  height: 300px;
+//  background-color: red;
+//}
+
+//轮播图部分
+.lunbo{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 30%;
+  //background-color: blue;
+  z-index: -10;
+  //display: none;
+  .swiper-container{
+    width: 100%;
+    height: 100%;
+    .swiper-slide{
+
+      .slide-body{
+        text-align: center;
+        position: relative;
+        img{
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          width: 50%;
+
+        }
+      }
+    }
+    .btn-lunbo-left{
+      left: 10%;
+    }
+    .btn-lunbo-right{
+      right: 10%;
+    }
+    .swiper-fenyeqi{
+      z-index: -200;
+      opacity: 0;
+    }
+
+  }
+}
+
+.lunbo.show{
+  z-index: 2100;
+}

@@ -1,0 +1,18 @@
+<!--各种种类十大品牌列表的具体列表-->
+<div class="title">
+	热门品牌导航
+</div>
+
+	<!--各种种类十大品牌列表-->
+	<div class='goodsTop10List'>
+		<ul>
+			{{each}}
+			<li>
+				<a class='goodsTop10a' href="detailTop10.html?brandTitleId={{$value.brandTitleId}}" categoryId="{{$value.categoryId}}" _id={{$value._id}}>
+					{{$value.brandTitle}}
+				</a>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</div>

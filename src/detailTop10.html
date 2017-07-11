@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>哪个牌子好</title>
+	<link rel="stylesheet" href="assets/Bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="CSS/common/base.css">
+	<link rel="stylesheet" href="CSS/top10/top10.css">
+
+</head>
+<body>
+<div class="top10container">
+	<!--顶部搜索模块-->
+	<div class="topsearch">
+
+	</div>
+	<!--顶部3级菜单-->
+	<div class="category">
+		<a href="#" class='first'>首页</a>
+		>
+		<a href="top10.html" class='two'>品牌大全</a>
+		>
+		<a href="top10.html" class='three'></a>
+	</div>
+	<div class="main-content clearfix">
+		<!--某品牌标题下的十大品牌列表哪个牌子好-->
+		<div class="question">
+			<!--平板电视哪个牌子好-->
+		</div>
+		<div class='answerList'>
+			<ul class='answerListU'>
+				<script type='text/html' id='answerList'>
+					{{each}}
+					<li>
+						<a href="#" brandTitleId='{{$value.brandTitleId}}' categoryId="{{$value.categoryId}}"
+						   _id={{$value._id}}>
+							<span class="num fl">{{$index+1}}</span>
+							<div class="info fl">
+								<h4>{{$value.brandName}}</h4>
+								<p>{{$value.brandInfo}} </p>
+							</div>
+						</a>
+					</li>
+					{{/each}}
+				</script>
+			</ul>
+		</div>
+		<!--产品销量排行-->
+		<div class="cellRanking">
+			<!--产品销量排行-->
+		</div>
+		<!--内容部分-->
+		<div class='cellRankCont'>
+			<ul>
+				<script type='text/html' id='cellRankCont'>
+					{{each}}
+					<li>
+						<a href="#">
+							<div>
+								{{@$value.productImg}}
+								<!--<img src="" alt="">-->
+							</div>
+							<div class="info">
+								<div class="tit">{{$value.productName}}</div>
+								<div class='star9 clearfix'>
+									<div class="price fl">{{$value.productPrice}}</div>
+									<div class="star5 fr">
+									</div>
+								</div>
+								<div class="other">
+									<em>{{$value.productQuote}}</em>
+									<em>{{$value.productCom}}</em>
+								</div>
+
+							</div>
+						</a>
+					</li>
+					{{/each}}
+				</script>
+			</ul>
+		</div>
+		<!--最新评论-->
+		<div class="newestComment">
+			<!--产品销量排行-->
+		</div>
+		<!--内容部分-->
+		<div class='newestCommentCont'>
+			<ul>
+				<script type='text/html' id='newestCommentCont'>
+					{{each}}
+						<li class='goodsInfo'>
+							<a href="#">
+							<div class="com">
+								<div class="triangle"></div>
+								<div class="name clearfix">
+									<div class="comName fl">{{$value.comName}}:</div>
+									<div class="star fl">
+										<div class="star4 fl"></div>
+									</div>
+									<div class="comTime fr">{{$value.comTime}}</div>
+								</div>
+								<div class="comContent">{{$value.comContent}}</div>
+							</div>
+							</a>
+						</li>
+					{{/each}}
+				</script>
+
+			</ul>
+			<script type='text/html' id="goodsInfo">
+				{{each}}
+				<a href="#">
+					<div class="info">
+						{{@$value.productImg}}
+						<div class="tit fl" >{{$value.productName}}</div>
+
+					</div>
+				</a>
+				{{/each}}
+			</script>
+		</div>
+	</div>
+</div>
+<script src='JS/lib/jquery-3.2.1.js'></script>
+<script src='JS/lib/template-web.js'></script>
+<script src='JS/top10/location.js'></script>
+<script src='JS/top10/detailTop10.js'></script>
+</body>
+</html>
+
+
+
+
+

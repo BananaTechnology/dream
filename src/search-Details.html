@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="JS/lib/normalize.css">
+    <link rel="stylesheet" href="CSS/common/base.css">
+    <link rel="stylesheet" href="CSS/priceSearch/priceSearch.css">
+</head>
+<body>
+<!--公共头部-->
+<header></header>
+<div class="wrap">
+
+</div>
+
+<script type="text/html" id="priceSearchDetails">
+    <div class="productDetailed">
+        <!--商品位置导航-->
+        <div class="productAddressNav">
+            <span>首页</span> > <span>{{sort}}</span> > <span>{{item}}</span>
+        </div>
+        <!--商品信息-->
+        <div class="productInfo">
+            <!--商品图片信息-->
+            <div class="productPic">
+                <%== productImg %>
+                <a href="#" class="label">
+                    <img src="images/sc.jpg" alt="收藏">
+                </a>
+            </div>
+            <!--商品文本信息-->
+            <div class="textInfo">
+                {{productName}}
+            </div>
+            <div class="buyInfo">
+                <div class="currentMinPrice">
+                    当前最低价: <span>¥5880.00</span>
+                </div>
+                <div class="commentNums">
+                    优选评论: <span>118条</span>
+                </div>
+            </div>
+        </div>
+        <!--商品评论信息-->
+        <div class="productCommentInfo">
+            <div class="Tab">
+                <ul>
+                    <li class="active">比价购买</li>
+                    <li>产品参数</li>
+                    <li>优选评价</li>
+                </ul>
+            </div>
+            <div class="shopPriceBox">
+                <ul>
+                    <li>
+                        <%== bjShop%>
+                    </li>
+                </ul>
+                <div class="minPrice">
+                    该商品的历史最低价: <span>¥5880.00</span>
+                </div>
+                <p> * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。</p>
+            </div>
+            <div class="hignComment">
+                <h4>优选网友评价</h4>
+                <ul>
+                    {{each comment}}
+                    <li>
+                        <div class="commentBox">
+                            <div class="userBox">
+                                <span class="userName">{{$value.comName}}</span>
+                                <span class="date">{{$value.comTime}}</span>
+                            </div>
+                            <div class="productInfo">
+                                <div class="starBox">
+                                    <embed src="images/star.svg" type="image/svg+xml" width="18px" height="18px" />
+                                    <embed src="images/star.svg" type="image/svg+xml" width="18px" height="18px" />
+                                    <embed src="images/star.svg" type="image/svg+xml" width="18px" height="18px" />
+                                    <embed src="images/star.svg" type="image/svg+xml" width="18px" height="18px" />
+                                    <embed src="images/star.svg" type="image/svg+xml" width="18px" height="18px" />
+                                </div>
+                                <p class="source">
+                                    {{$value.comFrom}}
+                                </p>
+                            </div>
+                            <div class="comment">
+                                <p>{{$value.comContent}}</p>
+                                <span>回复</span>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="more">
+                <button>查看更多</button>
+            </div>
+        </div>
+    </div>
+</script>
+<script src="JS/lib/art-template.js"></script>
+<script src="JS/lib/zepto.js"></script>
+<script src="JS/priceSearch/productDetails.js"></script>
+</body>
+</html>

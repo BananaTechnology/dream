@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
       <option name="arguments" value="--no-cache --update $FileName$:$FileNameWithoutExtension$.css" />
@@ -21,4 +22,7 @@
       <envs />
     </TaskOptions>
   </component>
+=======
+  <component name="ProjectTasksOptions" suppressed-tasks="SCSS;Babel" />
+>>>>>>> d5064de726b9c469ca30fa86dd53a982adb44785
 </project>

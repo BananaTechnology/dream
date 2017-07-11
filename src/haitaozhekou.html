@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>海淘折扣</title>
+    <link rel="stylesheet" href="assets/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS/haitao.css">
+
+</head>
+
+<body>
+    <!--顶部-->
+    <div class="dingbu">
+        <div class="back">
+            <span class="glyphicon glyphicon-menu-left"></span>
+        </div>
+        <h1>海淘折扣</h1>
+        <div class="home">
+            <img src="IMG/header_app.png" alt="">
+        </div>
+    </div>
+    <!--内容-->
+    <ul class="media-list neirong-ul">
+        <!--<li class="media neirong-li">
+            <div class="media-left">
+                <a href="#">
+        <img class="media-object" src="IMG/ic_cu.png" alt="">
+      </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">美国亚马逊
+                </h4>
+                <div class="tupian">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span>5</span>
+                </div>
+                凑单品..........
+                <span class="jiage">15</span>
+            </div>
+        </li>-->
+    </ul>
+    <!--底部-->
+    <div class="dibu">
+        <div class="btn-big">
+            <button type="button" class="btn btn-default btn-up">上一页</button>
+            <select class="btn-xiala">
+                <!--<option>
+                    <span class="dangqianye">1</span>/<span class="zongyeshu">15</span>
+                </option>-->
+            </select>
+            <button type="button" class="btn btn-default btn-down">下一页</button>
+        </div>
+        <!--底部-分级导航-->
+        <div class="daohang">
+            <div class="ziti">首页>省钱控>海淘折扣</div>
+        </div>
+        <div class="kongbai"></div>
+        <ul class="dl-zc">
+            <li class="one">登录</li>
+            <li class="two">注册</li>
+            <li class="three"><span class="glyphicon glyphicon-arrow-up"></span>返回顶部</li>
+        </ul>
+        <div class="zuidi">
+            <p><span class="shouji">手机APP下载</span>慢慢买手机版--<span class="bijia">掌上比价平台</span></p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="JS/lib/jquery-3.2.1.js"></script>
+<script src="JS/lib/template-web.js"></script>
+<script src="JS/haitaoneirong.js"></script>
+<script type="text/html" id="ht">
+    {{each result}}
+    <li class="media neirong-li">
+        <div class="media-left">
+            <a href="#">
+                 {{@$value.productImg2}}
+            </a>
+        </div>
+        <div class="media-body biaoti">
+            <h4 class="media-heading">{{$value.productFrom}}
+            </h4>
+            <div class="tupian">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>{{$value.productComCount}}</span>
+            </div>
+            {{$value.productName}}
+            <span class="jiage">{{$value.productPinkage}}</span>
+        </div>
+    </li>
+    {{/each}}
+</script>

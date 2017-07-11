@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript">
+        // 页面打开 立即计算
+        document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        // 尺寸更改也会重新计算
+        // 这里 写这个事件的目的是 是为了 让我们在 桌面端测试时 可以自动计算 移动端
+        window.onresize = function() {
+            document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        }
+    </script>
+    <script type="text/javascript" src="src/JS/lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="src/JS/lib/template-web.js"></script>
+    <link rel="stylesheet" href="src/assets/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="ccppdqlb.css" />
+</head>
+
+<body>
+    <!--品牌大全顶部-->
+
+    <div class="pingpai-header">
+        <div class="header-lf">
+            <a href="http://m.manmanbuy.com">
+            </a>
+        </div>
+
+        <div class="header-gi">
+            <a href="http://m.manmanbuy.com/?o=download"></a>
+        </div>
+    </div>
+    <!--品牌大全顶部结束-->
+
+
+    <!--品牌大全输入框开始-->
+    <form class="inputinfor">
+        <div class="form-group ">
+            <div>
+                <input type="text" class="form-control" placeholder="请输入你想比价的商品">
+                <button type="submit">搜索</button>
+            </div>
+
+        </div>
+
+    </form>
+    <!--品牌大全输入框结束-->
+
+    <!--品牌大全条-->
+    <div class="listband">
+        <li><a href="">首页</a></li>
+
+        <li>&gt;<a href="#">品牌大全</a></li>
+        <li>
+            <a href="#" class="list-scren"></a>
+        </li>
+
+    </div>
+    <!--品牌大全条结束-->
+
+    <!--热门品牌排行榜-->
+    <div class="band-container">
+        <div class="band-topband">
+            热门品牌排行
+        </div>
+        <div class="bandlist">
+
+
+
+        </div>
+    </div>
+    <!--热门品牌排行榜结束-->
+    <!--登录底部开始-->
+    <div class="login">
+        <ul>
+            <li><a href="">登录</a></li>
+            <li><a href="">注册</a></li>
+            <li><a href=""><i class="glyphicon glyphicon-arrow-up"></i>返回顶部</a></li>
+        </ul>
+    </div>
+
+    <!--慢慢买logo定位区-->
+    <div class="manmanlogpos">
+        <div class="closebtn glyphicon glyphicon-remove-sign">
+
+        </div>
+        <div class="manmanlogimg">
+            <div class="slowfont">慢</div>
+            <div class="wenzi">
+                <div>慢慢买</div>
+                <div>全网比价,查全网价格</div>
+            </div>
+        </div>
+        <div class="lijiopen">
+            <a href="">立即打开</a>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+<!--品牌大全列表渲染开始-->
+<script type="text/html" id="brandtitle">
+    {{each result}}
+    <div>
+        <a href="index.html?brandTitleId={{$value.brandTitleId}}&categoryId={{$value.categoryId}}&_id={{$value._id}}">{{$value.brandTitle}}
+                    <i class="glyphicon glyphicon-menu-down"></i>
+         </a>
+
+    </div>
+    {{/each}}
+</script>
+<!--品牌大全列表渲染结束-->
+
+<!--获取品牌大全列表-->
+<script type="text/javascript">
+    $(function() {
+            $.ajax({
+                url: 'http://139.199.192.48:9090/api/getbrandtitle',
+                type: 'get',
+                data: {},
+                success: function(data) {
+                    console.log(data);
+                    var brti = template('brandtitle', data);
+                    $('.bandlist').append(brti);
+                }
+
+            })
+        })
+        // 获取品牌大全列表结束
+
+    $('.closebtn').click(function() {
+        $('.manmanlogpos').fadeOut('2000');
+    })
+</script>

@@ -1,0 +1,342 @@
+@import "normalize.scss";
+@import "base.scss";
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    font-family: 'simson';
+}
+
+body {
+    background-color: #F7F7F7;
+    color: #000;
+}
+
+
+/*外面的大容器*/
+
+#bcj-layout {
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    overflow: scroll;
+    /*白菜价顶部主题*/
+    div {
+        padding: 0;
+        margin: 0;
+    }
+    .bcj-top {
+        width: 100%;
+        height: 44px;
+        padding: 0 50px;
+        background-color: #E4393C;
+        z-index: 99;
+        position: relative;
+        .bcj-back {
+            width: 50px;
+            height: 44px;
+            position: absolute;
+            left: 0;
+            a {
+                display: inline-block;
+                width: 50px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                text-align: center;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .bcj-theme {
+            h1 {
+                font-size: 20px;
+                font-weight: 900;
+                color: #fff;
+                font-family: 'simson';
+                height: 44px;
+                line-height: 44px;
+                text-align: center;
+            }
+        }
+        .bcj-download {
+            width: 50px;
+            height: 44px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            a {
+                text-align: center;
+                display: inline-block;
+                width: 50px;
+                height: 44px;
+                background: url('../IMG/header_app.png') no-repeat center center /34px 34px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    /*白菜价菜单栏部分*/
+    .bcj-topContainer {
+        background-color: #fff;
+        width: 100%;
+        /*白菜价菜单栏*/
+        .bcj-tabItem {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            .bcj-swiperContent {
+                flex: 1;
+                ul {
+                    width: auto;
+                    height: 36px;
+                    border: transparent;
+                    >li {
+                        height: 36px;
+                        &.active {
+                            border: none;
+                            border: none;
+                            color: #E4393C;
+                        }
+                        &.active a {
+                            color: #E4393C;
+                            border-bottom: 2px solid #E4393C;
+                            background-color: transparent;
+                        }
+                        a {
+                            color: #333;
+                            font-size: 14px;
+                            height: 36px;
+                            line-height: 36px;
+                            padding: 0;
+                            width: auto;
+                            margin: 0 12px;
+                        }
+                    }
+                }
+            }
+            .swiper-slide {
+                height: auto;
+            }
+            /*切换按钮旁边的搜索按钮*/
+            .bcj-search {
+                width: 36px;
+                height: 36px;
+                text-align: center;
+                background-color: #fbfbfb;
+                border-left: 1px solid #e6e6e6;
+                border-bottom: 1px solid #e6e6e6;
+                z-index: 2;
+                i {
+                    display: inline-block;
+                    right: 0;
+                    width: 38px;
+                    height: 38px;
+                    line-height: 38px;
+                    color: #bbb;
+                    &:before {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        /*隐藏的收索框*/
+        .bcj-searchHide {
+            position: absolute;
+            width: 100%;
+            max-width: 725px;
+            height: 55px;
+            top: 81px;
+            left: 0;
+            background-color: #F7F7F7;
+            box-shadow: 0px 3px 5px 1px #ccc;
+            padding: 10px;
+            z-index: 99;
+            display: none;
+            .bcj-txt {
+                padding-right: 40px;
+                height: 35px;
+                font-size: 14px;
+                width: 100%;
+                height: 35px;
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    padding-left: 35px;
+                    font-weight: 400;
+                }
+                i {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 16px;
+                    color: #ccc;
+                }
+                .bcj-btn {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    font-size: 16px;
+                    outline: none;
+                }
+                .show {
+                    display: block;
+                }
+            }
+        }
+    }
+    /*白菜区域具体商品*/
+    .bcj-container {
+        max-width: 962px;
+        margin: 0 auto;
+        .bcj-contentBox {
+            .bcj-goods {
+                /*白菜价全部区域广告图片*/
+                .bcj-banner {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    width: 100%;
+                    min-height: 58px;
+                    display: none;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &.active {
+                        display: block;
+                    }
+                }
+                /*商品区域*/
+                .bcj-goodsBox {
+                    width: 100%;
+                    overflow: hidden;
+                    .bcj-goods {
+                        li {
+                            width: 100%;
+                            height: 150px;
+                            position: relative;
+                            margin-top: 5px;
+                            background-color: #fff;
+                            padding: 20px 0 0 5px;
+                            a.gobuy {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 150px;
+                                z-index: 99;
+                                color: transparent;
+                            }
+                            .pic {
+                                width: 110px;
+                                height: 110px;
+                                img {
+                                    display: block;
+                                    width: 110px;
+                                    height: 110px;
+                                }
+                            }
+                            .info {
+                                padding: 20px 5px 0 120px;
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                right: 0;
+                                .infoTop {
+                                    width: 100%;
+                                    .bcj-info {
+                                        font-size: 14px;
+                                        span.b {}
+                                    }
+                                    .price {
+                                        padding: 3px 0;
+                                        color: #FC353A;
+                                        font-size: 18px;
+                                        i {
+                                            font-style: normal;
+                                            font-size: 14px;
+                                        }
+                                        em {
+                                            font-size: 12px;
+                                            font-style: normal;
+                                            padding: 0 3px;
+                                        }
+                                        del {
+                                            color: gray;
+                                            font-size: 14px;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                }
+                                .infoBottom {
+                                    width: 100%;
+                                    .ticketAll {
+                                        padding: 2px 0;
+                                        .ticket {
+                                            border: 1px dashed red;
+                                            width: 120px;
+                                            height: 26px;
+                                            line-height: 26px;
+                                            text-align: center;
+                                            margin-top: 3px;
+                                            a {
+                                                color: red;
+                                            }
+                                        }
+                                        .btn {
+                                            background-color: #FF5E5D;
+                                            padding: 6px;
+                                            a {
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                    .bar {
+                                        color: #919191;
+                                        i {
+                                            font-style: normal;
+                                            em {}
+                                            span {}
+                                        }
+                                        b {
+                                            font-style: normal;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*底部的返回箭头*/
+    footer {
+        .bcj-toTop {
+            display: none;
+            >a {
+                position: fixed;
+                bottom: 30px;
+                right: 10px;
+                color: #808080;
+                z-index: 999;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

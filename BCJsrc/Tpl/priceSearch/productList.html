@@ -1,0 +1,38 @@
+<div class="productTabBox">
+    <div class="Tab">
+        <ul>
+            <li class="active">综合</li>
+            <li>销量</li>
+            <li>价格</li>
+            <li>筛选</li>
+        </ul>
+    </div>
+
+    <div class="productListBox">
+        <ul>
+            {{each result}}
+            <li class="productItem" productId="{{$value.productId}}">
+                <a href="#">
+                    <div class="productBox">
+                        <div class="productPic">
+                            <%==$value.productImg%>
+                        </div>
+                        <div class="productDescribe">
+                            <h4>{{$value.productName}}</h4>
+                            <!--商品价格-->
+                            <div class="price">{{$value.productPrice}}</div>
+                            <!--商品信息-->
+                            <div class="info">
+                                <!--商品报价-->
+                                <span class="makeOffers">{{$value.productQuote}}</span>
+                                <!--商品评论-->
+                                <span class="comment">{{$value.productCom}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

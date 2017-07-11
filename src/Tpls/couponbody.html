@@ -1,0 +1,23 @@
+<div class="quan-body">
+  {{each result}}
+  <div class="quan-model">
+    <ul>
+      <li>
+        <!--<a href="index.html?key=0&shi=20"></a>-->
+        <a href="{{$value.couponLink}}?key={{$value.couponId}}&couponTitle='{{$value.couponTitle}}'" couponId="{{$value.couponId}}">
+          <img src="{{$value.couponImg}}" alt=""/>
+          <h2>{{$value.couponTitle}}</h2>
+        </a>
+
+      </li>
+    </ul>
+  </div>
+  {{/each}}
+
+  <div class="quan-list">
+    <a href="#">首页</a>&gt;
+    <a href="Tpls/coupon.html">优惠券</a>
+  </div>
+</div>
+
+

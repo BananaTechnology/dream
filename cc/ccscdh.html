@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--视口-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <script type="text/javascript">
+        // 页面打开 立即计算
+        document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        // 尺寸更改也会重新计算
+        // 这里 写这个事件的目的是 是为了 让我们在 桌面端测试时 可以自动计算 移动端
+        window.onresize = function() {
+            document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+        }
+    </script>
+    <script type="text/javascript" src="src/JS/lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="src/JS/lib/template-web.js"></script>
+    <link rel="stylesheet" href="src/assets/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="ccscdh.css" />
+    <!--<link rel="stylesheet" type="text/css" href="src/CSS/common/base.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="src/CSS/common/css/normalize.css" />-->
+</head>
+
+<body>
+    <!--商城导航顶部-->
+    <div class="header" id="fhtop">
+        <div class="header-lf">
+            <a href="http://m.manmanbuy.com">
+                < </a>
+        </div>
+        <div class="buydaohan">商城导航</div>
+        <div class="header-gi">
+            <a href="http://m.manmanbuy.com/?o=download"></a>
+        </div>
+    </div>
+    <!--商城导航结束-->
+    <!--商城导航列表-->
+    <div class="shop-navi">
+
+        <div class="shop-navimiddle">
+            <script type="text/html" id="libiaotemplate">
+                {{each result}}
+                <a href="{{$value.navHref}}">
+                    <img src="{{$value.navImg}}" alt=""> {{$value.navTitle}}
+                </a>
+                {{/each}}
+            </script>
+
+        </div>
+    </div>
+    <!--导航列表底部页面开始-->
+    <div class="shop-navibto">
+        <ul>
+            <!--跳转首页-->
+            <li><a href="">首页</a></li>
+            <li>></li>
+            <li><a href="">商城导航</a></li>
+        </ul>
+    </div>
+    <div class="shop-baiban">
+        <div>
+            <div><a href="">登录</a></div>
+            <div><a href="">注册</a></div>
+            <div>
+                <a href="#fhtop">
+                    <i class="glyphicon glyphicon-arrow-up"></i>返回顶部
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--慢标志-->
+    <div class='man-container'>
+        <a href="http://m.manmanbuy.com/?o=download">
+            <b>慢</b>
+            <b>App 下载</b>
+        </a>
+    </div>
+    <!--慢标志结束-->
+
+    <!--底部商标开始-->
+    <div class="botom-mark">
+        <ul>
+            <li><a href="#">手机APP下载</a></li>
+            <li><a href="#">慢慢买手机版</a></li>
+            <li>
+                <a href="#">--掌上比价平台</a>
+            </li>
+        </ul>
+        <p>m.manmanbuy.com</p>
+
+    </div>
+    <!--底部商品结束-->
+
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+    $(function() {
+        $.ajax({
+            url: 'http://139.199.192.48:9090/api/getsitenav',
+            type: 'get',
+            data: {},
+            success: function(data) {
+                console.log(data);
+                var resultString = template('libiaotemplate', data);
+                // console.log(resultString);
+                $('.shop-navimiddle').append(resultString);
+            }
+        })
+    })
+</script>

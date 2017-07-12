@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/priceSearch.css">
+</head>
+<body>
+<!--公共头部-->
+<header></header>
+<div class="wrap">
+
+</div>
+
+<script type="text/html" id="priceSearchList">
+    <div class="productTabBox">
+        <div class="Tab">
+            <ul>
+                <li class="active">综合</li>
+                <li>销量</li>
+                <li>价格</li>
+                <li>筛选</li>
+            </ul>
+        </div>
+
+        <div class="productListBox">
+            <ul>
+                {{each result}}
+                <li class="productItem" productId="{{$value.productId}}" brandName="{{$value.brandName}}">
+                    <a href="./search-Details.html">
+                        <div class="productBox">
+                            <div class="productPic">
+                                <%==$value.productImg%>
+                            </div>
+                            <div class="productDescribe">
+                                <h4>{{$value.productName}}</h4>
+                                <!--商品价格-->
+                                <div class="price">{{$value.productPrice}}</div>
+                                <!--商品信息-->
+                                <div class="info">
+                                    <!--商品报价-->
+                                    <span class="makeOffers">{{$value.productQuote}}</span>
+                                    <!--商品评论-->
+                                    <span class="comment">{{$value.productCom}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="productSwitch">
+            <button class="prev">上一页</button>
+            <select>
+                {{each pageNums}}
+                <option value="{{$index + 1}}">{{$index + 1}}/{{pageNums.length}}</option>
+                {{/each }}
+            </select>
+            <button class="next">下一页</button>
+        </div>
+
+        <div class="linkBox">
+            <h5>相关链接:</h5>
+            <p>电视十大品牌</p>
+            <p>电视口碑大全</p>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="liTPL">
+    {{each result}}
+    <li class="productItem" productId="{{$value.productId}}">
+        <a href="./search-Details.html">
+            <div class="productBox">
+                <div class="productPic">
+                    <%==$value.productImg%>
+                </div>
+                <div class="productDescribe">
+                    <h4>{{$value.productName}}</h4>
+                    <!--商品价格-->
+                    <div class="price">{{$value.productPrice}}</div>
+                    <!--商品信息-->
+                    <div class="info">
+                        <!--商品报价-->
+                        <span class="makeOffers">{{$value.productQuote}}</span>
+                        <!--商品评论-->
+                        <span class="comment">{{$value.productCom}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="../js/lib/art-template.js"></script>
+<script src="../js/lib/zepto.js"></script>
+<script src="js/productList.js"></script>
+</body>
+</html>

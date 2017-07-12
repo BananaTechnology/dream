@@ -1,0 +1,335 @@
+header {
+  width: 100%;
+  height: 51px;
+  background: #ff841d;
+  position: relative;
+  padding: 0 20px;
+}
+
+header .logo a {
+  display: block;
+  padding-top: 13px;
+}
+
+header .logo a img {
+  width: 185.5px;
+  height: 25px;
+}
+
+header .appdown a {
+  display: block;
+  padding-top: 8px;
+}
+
+header .appdown a img {
+  width: 34px;
+  height: 34px;
+}
+
+.nav-top {
+  padding: 10px;
+  height: 51px;
+  position: relative;
+}
+
+.nav-top .seek-text {
+  width: 90%;
+}
+
+.nav-top .seek-text input {
+  width: 100%;
+  height: 30px;
+  background: #f1f1f1;
+  border-radius: 15px;
+  padding-left: 15px;
+}
+
+.nav-top .seek-btn input {
+  color: white;
+  width: 63px;
+  height: 30px;
+  background: #ff841d;
+  border-radius: 15px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.priceSearchWrap {
+  background-color: #F2F2F2; }
+  .priceSearchWrap .productBox {
+    padding: 5px; }
+    .priceSearchWrap .productBox .productTitleList {
+      background-color: #EBEBEB;
+      border: 1px solid #ccc;
+      border-radius: 5px; }
+      .priceSearchWrap .productBox .productTitleList .productTitle {
+        position: relative; }
+        .priceSearchWrap .productBox .productTitleList .productTitle h3 {
+          height: 41px;
+          line-height: 41px;
+          padding-left: 16px;
+          font-size: 16px; }
+        .priceSearchWrap .productBox .productTitleList .productTitle .pullDown {
+          display: block;
+          width: 30px;
+          height: 7px;
+          position: absolute;
+          right: 10px;
+          top: 14px;
+          background: url("../../images/arrow1.gif"); }
+        .priceSearchWrap .productBox .productTitleList .productTitle .productChildBox {
+          display: none; }
+          .priceSearchWrap .productBox .productTitleList .productTitle .productChildBox .productChildList {
+            display: flex;
+            flex-wrap: wrap; }
+            .priceSearchWrap .productBox .productTitleList .productTitle .productChildBox .productChildList li {
+              width: 33.333%;
+              height: 40px;
+              line-height: 40px;
+              text-align: center;
+              background-color: #FFFFFF;
+              box-sizing: border-box;
+              border-bottom: 1px solid #cccccc; }
+              .priceSearchWrap .productBox .productTitleList .productTitle .productChildBox .productChildList li:nth-child(3n-1) {
+                border-left: 1px solid #cccccc;
+                border-right: 1px solid #cccccc; }
+      .priceSearchWrap .productBox .productTitleList .productTitle + .productTitle {
+        border-top: 1px solid #cccccc; }
+
+.productTabBox .Tab ul {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC; }
+  .productTabBox .Tab ul li {
+    flex: 1;
+    height: 40px;
+    line-height: 40px;
+    text-align: center; }
+    .productTabBox .Tab ul li.active {
+      color: #ed0000; }
+.productTabBox .productListBox ul .productItem {
+  height: 140px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #CCCCCC; }
+  .productTabBox .productListBox ul .productItem a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; }
+    .productTabBox .productListBox ul .productItem a > div {
+      display: flex;
+      justify-content: space-between; }
+      .productTabBox .productListBox ul .productItem a > div .productPic {
+        width: 120px;
+        height: 120px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center; }
+        .productTabBox .productListBox ul .productItem a > div .productPic img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: 0 auto; }
+      .productTabBox .productListBox ul .productItem a > div .productDescribe {
+        flex: 1;
+        height: 120px;
+        display: flex;
+        flex-direction: column; }
+        .productTabBox .productListBox ul .productItem a > div .productDescribe h4 {
+          height: 56px;
+          font-size: 14px;
+          color: #333333;
+          text-decoration: none;
+          overflow: hidden;
+          line-height: 28px;
+          word-break: break-all; }
+        .productTabBox .productListBox ul .productItem a > div .productDescribe .price {
+          flex: 1;
+          color: #ed0000;
+          font-size: 18px; }
+          .productTabBox .productListBox ul .productItem a > div .productDescribe .price em {
+            font-style: normal; }
+        .productTabBox .productListBox ul .productItem a > div .productDescribe .info {
+          flex: 1;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 15px;
+          color: #a1a1a1; }
+.productTabBox .productSwitch {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  background: #eeeeee; }
+  .productTabBox .productSwitch button {
+    border: 1px solid #8c8c8c;
+    width: 82px;
+    height: 34px;
+    border-radius: 5px;
+    background: linear-gradient(#f1f1f1, #d4d4d4); }
+  .productTabBox .productSwitch select {
+    border: 1px solid #8c8c8c;
+    width: 93px;
+    height: 34px;
+    text-align: center;
+    font-size: 16px;
+    padding-left: 30px; }
+.productTabBox .linkBox {
+  background: #eeeeee;
+  padding-top: 30px;
+  padding-left: 10px; }
+  .productTabBox .linkBox h5 {
+    font-size: 16px;
+    line-height: 24px; }
+  .productTabBox .linkBox p {
+    font-size: 12px;
+    line-height: 24px;
+    color: #bbb; }
+
+.productDetailed .productAddressNav {
+  width: 100%;
+  height: 38px;
+  padding-left: 10px;
+  line-height: 38px;
+  background: #ebebeb linear-gradient(#ffffff, #ebebeb);
+  font-size: 16px;
+  color: #a1a1a1; }
+.productDetailed .productInfo {
+  padding: 10px 10px 0; }
+  .productDetailed .productInfo .productPic {
+    height: 180px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    position: relative; }
+    .productDetailed .productInfo .productPic img {
+      display: block;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto; }
+    .productDetailed .productInfo .productPic a {
+      display: block;
+      width: 39px;
+      height: 39px;
+      position: absolute;
+      top: 10px;
+      right: 10px; }
+      .productDetailed .productInfo .productPic a img {
+        display: block;
+        width: 100%;
+        height: 100%; }
+  .productDetailed .productInfo .textInfo {
+    font-size: 16px; }
+  .productDetailed .productInfo .buyInfo {
+    display: flex;
+    font-size: 12px;
+    color: #666;
+    padding-bottom: 20px;
+    margin-top: 10px; }
+    .productDetailed .productInfo .buyInfo .currentMinPrice {
+      flex: 1; }
+    .productDetailed .productInfo .buyInfo .commentNums {
+      flex: 1; }
+.productDetailed .productCommentInfo .Tab {
+  height: 34px;
+  padding-top: 20px;
+  background-color: #8c8c8c; }
+  .productDetailed .productCommentInfo .Tab ul {
+    display: flex;
+    height: 100%;
+    border-top: solid 1px #c14d00;
+    border-bottom: solid 1px #c14d00; }
+    .productDetailed .productCommentInfo .Tab ul li {
+      flex: 1;
+      background: #ffbb00;
+      background: linear-gradient(#ffd050, #ffbb00);
+      text-align: center;
+      height: 100%;
+      line-height: 34px;
+      border-left: solid 1px #c14d00;
+      border-right: solid 1px #c14d00;
+      font-size: 16px;
+      color: white; }
+      .productDetailed .productCommentInfo .Tab ul li.active {
+        background: linear-gradient(#ffa632, #ff9000); }
+.productDetailed .productCommentInfo .shopPriceBox {
+  padding: 0 5px;
+  border-bottom: 4px solid #8c8c8c; }
+  .productDetailed .productCommentInfo .shopPriceBox ul li {
+    height: 46px;
+    line-height: 46px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #eeeeee; }
+    .productDetailed .productCommentInfo .shopPriceBox ul li .shop {
+      display: flex;
+      align-items: center; }
+      .productDetailed .productCommentInfo .shopPriceBox ul li .shop .icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: red; }
+        .productDetailed .productCommentInfo .shopPriceBox ul li .shop .icon img {
+          display: block;
+          width: 16px;
+          height: 16px; }
+      .productDetailed .productCommentInfo .shopPriceBox ul li .shop .label {
+        font-size: 12px;
+        color: #cccccc; }
+    .productDetailed .productCommentInfo .shopPriceBox ul li .price {
+      font-size: 16px;
+      color: #fe0202; }
+      .productDetailed .productCommentInfo .shopPriceBox ul li .price span {
+        color: #cccccc; }
+  .productDetailed .productCommentInfo .shopPriceBox .minPrice {
+    font-size: 14px;
+    line-height: 30px;
+    color: #5a5a5a; }
+  .productDetailed .productCommentInfo .shopPriceBox p {
+    font-size: 12px;
+    color: #cccccc;
+    padding: 20px 5px 10px; }
+.productDetailed .productCommentInfo .hignComment h4 {
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #dbdbdb;
+  font-size: 16px; }
+.productDetailed .productCommentInfo .hignComment ul li {
+  border-bottom: 1px solid #cccccc; }
+  .productDetailed .productCommentInfo .hignComment ul li .commentBox .userBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #cccccc; }
+  .productDetailed .productCommentInfo .hignComment ul li .commentBox .productInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    line-height: 20px;
+    color: #cccccc; }
+  .productDetailed .productCommentInfo .hignComment ul li .commentBox .comment {
+    padding: 0 10px; }
+    .productDetailed .productCommentInfo .hignComment ul li .commentBox .comment p {
+      font-size: 14px; }
+    .productDetailed .productCommentInfo .hignComment ul li .commentBox .comment span {
+      line-height: 25px;
+      color: #cccccc; }
+.productDetailed .productCommentInfo .more {
+  padding: 20px 10px;
+  background-color: #eeeeee; }
+  .productDetailed .productCommentInfo .more button {
+    width: 100%;
+    text-align: center;
+    height: 33px;
+    line-height: 33px;
+    background: linear-gradient(#f1f1f1, #d4d4d4);
+    border: 1px solid #5e5e5e;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=priceSearch.css.map */
